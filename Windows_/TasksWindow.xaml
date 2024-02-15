@@ -1,0 +1,72 @@
+﻿<Window x:Class="Organaizer3121.Windows_.TasksWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Organaizer3121.Windows_"
+        mc:Ignorable="d"
+        Title="TasksWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="240"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.Column="0" Grid.ColumnSpan="2">
+            <TabItem Header="Tasks for today">
+                <StackPanel>
+                    <DataGrid x:Name="dg" AutoGenerateColumns="False" Height="298">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Number"/>
+                            <DataGridTextColumn Header="Task"/>
+                            <DataGridTextColumn Header="Date"/>
+                            <DataGridTextColumn Header="Done"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Content="Edit" Height="30" Width="150" Margin="10" HorizontalAlignment="Right"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="All tasks">
+                <StackPanel>
+                    <DataGrid x:Name="dg1" AutoGenerateColumns="False" Height="298">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Number"/>
+                            <DataGridTextColumn Header="Task"/>
+                            <DataGridTextColumn Header="Date"/>
+                            <DataGridTextColumn Header="Done"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Content="Edit" Height="30" Width="150" Margin="10" HorizontalAlignment="Right"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Add tasks">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130.5"/>
+                        <ColumnDefinition Width="29.5"/>
+                        <ColumnDefinition Width="400"/>
+                        <ColumnDefinition Width="240"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel VerticalAlignment="Top" Grid.ColumnSpan="3">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Grid.Column="0">
+                            <TextBlock Text="Name" TextAlignment="Center" Width="150" Margin="0 20 0 0"/>
+                            <TextBox x:Name="tasks_txt" Margin="5"/>
+                            <TextBlock Text="Date" TextAlignment="Center" Width="150" Margin="0 20 0 0"/>
+                            <DatePicker x:Name="datePicker" Margin="5"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Top" Grid.Column="1" Margin="100 -120 0 0">
+                            <TextBlock Text="Description" TextAlignment="Center"/>
+                            <TextBox Width="337" Height="300"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Column="3">
+            <Image Source="../Images_/user1.png" Width="150" Margin="0 30 0 0"/>
+            <TextBlock x:Name="username" TextAlignment="Center" Margin="0 10 0 0" FontSize="14" FontWeight="Bold"/>
+            <TextBlock Text="Today" TextAlignment="Center" FontSize="18" Margin="7"/>
+            <DatePicker x:Name="dp"/>
+        </StackPanel>
+    </Grid>
+</Window>
