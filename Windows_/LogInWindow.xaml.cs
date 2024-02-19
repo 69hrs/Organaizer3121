@@ -45,8 +45,6 @@ namespace Organaizer3121.Windows_
         private void ResetPass_btn_Click(object sender, RoutedEventArgs e)
         {
             sp2.Visibility = Visibility.Visible;
-            var userName = login_txt.Text;
-            
         }
 
         private void SignUp_btn_Click(object sender, RoutedEventArgs e)
@@ -54,6 +52,16 @@ namespace Organaizer3121.Windows_
             SignUpWindow suw = new SignUpWindow();
             suw.Show();
             this.Hide();
+        }
+
+        private void remindPas_btn_Click(object sender, RoutedEventArgs e)
+        {
+            var answer = context.Users.Where(x => x.Answer == answer_txt.Text).FirstOrDefault();
+            var pass = context.Users.Where(x => x.Login.Equals(login_txt.Text)).Select(x => x.Password).FirstOrDefault();
+            if (cmb != null && answer_txt.Text == answer?.Answer)
+                remindPas_txt.Text = pass;
+            else
+                remindPas_txt.Text = "Error";
         }
     }
 }

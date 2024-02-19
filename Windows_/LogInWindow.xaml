@@ -23,6 +23,7 @@
                 <ComboBox x:Name="cmb" Width="150" Height="20" Margin="5"/>
                 <TextBox x:Name="answer_txt" Width="150" Height="20" Margin="5"/>
                 <TextBox x:Name="remindPas_txt" Width="150" Height="20" Margin="5"/>
+                <Button x:Name="remindPas_btn" Content="Remind password" Width="150" Height="20" Margin="5" Click="remindPas_btn_Click"/>
             </StackPanel>
         </StackPanel>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">

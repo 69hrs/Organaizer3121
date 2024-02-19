@@ -30,5 +30,10 @@ namespace Organaizer3121.Windows_
             liw.Show();
             this.Hide();
         }
+
+        private void SignUp_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

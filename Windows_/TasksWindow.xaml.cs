@@ -26,7 +26,8 @@ namespace Organaizer3121.Windows_
             InitializeComponent();
             dg.ItemsSource = context.Tasks.ToList();
             dg1.ItemsSource = context.Tasks.ToList();
-
+            username.Text = us.Login;
+            dp.SelectedDate= DateTime.Today;
         }
     }
 }
